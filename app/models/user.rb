@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :favorites
+
   attr_accessor :remember_token, :reset_token
   before_save   :downcase_email
   before_create :generate_access_token
