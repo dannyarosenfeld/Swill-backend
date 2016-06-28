@@ -78,7 +78,6 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
-    mysql2 (0.4.3)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     pg (0.17.1)
@@ -162,8 +161,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
-  mysql2 (>= 0.3.13, < 0.5)
-  pg (= 0.17.1)
+  pg
   rack-cors
   rails (= 4.2.5)
   rails_12factor (= 0.0.2)
@@ -175,4 +173,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.11.2
+   1.12.5
