@@ -6,12 +6,28 @@ module Api
 
     # GET /users
     def index
+      p params
       @users = User.all
     end
 
     # GET /users/1
     def show
+      p "blah"*30
+
+      user = User.find_by(access_token: params[:session][:accessToken])
+      p "blah"*30
+    if user
+      favorites = user.favorites
+      p favorites
+      p "blah"*30
+          render :text => "successful", status: 200
+        hash = {}
+      favorites.each_with_index do |favorite, idx|
+        hash[idx] = favorite
+      end
     end
+      p hash
+  end
 
     # GET /users/new
     def new
