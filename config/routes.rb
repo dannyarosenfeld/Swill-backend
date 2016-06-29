@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root 'welcome#welcome'
 
   namespace :api do
+    get 'favorites' => 'favorites#show'
     post 'favorites' => 'favorites#create'
     post   'login'   => 'sessions#create'
     delete 'logout'  => 'sessions#destroy'
