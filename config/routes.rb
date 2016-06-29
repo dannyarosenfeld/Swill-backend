@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root 'welcome#welcome'
 
   namespace :api do
+    post 'checknames' => 'checknames#create'
     delete 'favorites' => 'favorites#destroy'
     post 'userfavorites' => 'userfavorites#create'
     get 'favorites' => 'favorites#show'
