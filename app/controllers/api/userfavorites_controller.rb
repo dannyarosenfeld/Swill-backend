@@ -16,8 +16,9 @@ module Api
         id_ary = []
 
       favorites.each do |favorite|
-        return_hash[favorite.drink_id] = favorite.drink_name
+        return_hash[favorite.drink_id] = {id: favorite.drink_id, name: favorite.drink_name}
       end
+
 
 
 
