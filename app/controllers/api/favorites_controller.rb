@@ -9,6 +9,16 @@ class FavoritesController < ApplicationController
     end
   end
 
+  def destroy
+    user = User.find_by(access_token: params[:favorite][:accessToken])
+     if user
+        favorite = user.favorites.where(drink_id: params[:favorite][:drink_id])
+        user.favorites.delete(favorite)
+        render text: "favorite deleted", status: 200
+      else
+        render text: "Something went wrong", status: 422
+      end
+  end
 
 
 end
