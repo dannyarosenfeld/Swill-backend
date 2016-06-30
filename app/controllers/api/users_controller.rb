@@ -46,6 +46,8 @@ module Api
     # POST /users
     def create
       @user = User.new(user_params)
+      p @user
+      p "*"*50
         if @user.save
           render text: @user.access_token, status: 201
         else
