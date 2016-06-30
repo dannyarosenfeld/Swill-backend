@@ -11,14 +11,14 @@ Rails.application.routes.draw do
   root 'welcome#welcome'
 
   namespace :api do
-    post 'checknames' => 'checknames#create'
-    delete 'favorites' => 'favorites#destroy'
-    post 'userfavorites' => 'userfavorites#create'
-    get 'favorites' => 'favorites#show'
-    post 'favorites' => 'favorites#create'
-    post   'login'   => 'sessions#create'
-    delete 'logout'  => 'sessions#destroy'
-    get    'verify'  => 'sessions#verify_access_token'
+    post '/checknames' => 'checknames#create'
+    delete '/favorites' => 'favorites#destroy'
+    post '/userfavorites' => 'userfavorites#create'
+    get '/favorites' => 'favorites#show'
+    post '/favorites' => 'favorites#create'
+    post   '/login'   => 'sessions#create'
+    delete '/logout'  => 'sessions#destroy'
+    get    '/verify'  => 'sessions#verify_access_token'
     resources :users, param: :access_token
     resources :password_resets, only: [:new, :create, :edit, :update]
   end
